@@ -6,18 +6,10 @@ import java.util.List;
 import java.util.Queue;
 
 public class Supervisor extends Human {
-    private List<Supervisor> supervisors = new ArrayList<>();
 
-
-        public Supervisor(String firstName, String secondName, String pesel) {
+   public Supervisor(String firstName, String secondName, String pesel) {
             super(firstName, secondName, pesel);
-            supervisors.add(this);
-
-        }
-
-        public List<Supervisor> getSupervisors() {
-            return supervisors;
-        }
+   }
 
     public List<Student> supervisorStudents = new ArrayList<Student>();
 

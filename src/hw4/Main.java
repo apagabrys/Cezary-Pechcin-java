@@ -9,9 +9,9 @@ public class Main {
         Supervisor supervisor1 = new Supervisor("Pan", "Promotor", "2121212121");
         Supervisor supervisor2 = new Supervisor("Adam", "Profesor", "213231312");
         Supervisor supervisor3 = new Supervisor("Tomasz", "Wykladowca", "9283718231");
+        Signer signer = new Signer();
 
-        supervisor1.addStudent(student4);
-        supervisor1.addStudent(student1);
+
 
 
 

@@ -5,14 +5,12 @@ import java.util.List;
 
 public class Student extends Human {
     private String faculty;
-    private List<Student> students = new ArrayList<>();
     public Supervisor supervisor;
 
     public Student(String firstName, String secondName, String pesel, String faculty) {
         super(firstName, secondName, pesel);
         this.faculty = faculty;
-        this.supervisor = supervisor;
-        students.add(this);
+        this.supervisor = getSupervisor();
     }
     public Supervisor getSupervisor(){
         return supervisor;
@@ -22,9 +20,6 @@ public class Student extends Human {
         return faculty;
     }
 
-    public List<Student> getStudents() {
-        return students;
-    }
     @Override
     public boolean equals(Object o){
         final Student s = (Student) o;

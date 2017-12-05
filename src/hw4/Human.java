@@ -1,6 +1,6 @@
 package hw4;
 
-public abstract class Human {
+public  class Human {
     private String firstName;
     private String secondName;
     private String pesel;

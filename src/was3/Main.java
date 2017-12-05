@@ -1,8 +1,10 @@
 package was3;
 
+import javax.swing.*;
+
 public class Main {
     public static void main(String[] args) {
-
+    /*
         /*
         Punkt punkt = new Punkt();
         punkt.setX(5);
@@ -41,7 +43,7 @@ public class Main {
         }*/
       //  Animal a = new Animal();
       //  System.out.println(a);
-
+    /*
         Dog d = new Dog("Max", 5, 5, Breed.PUG);
         System.out.println(d);
 
@@ -62,6 +64,7 @@ public class Main {
                 Dog b = new Dog("Dog"+i, 4,1,Breed.PUG);
             }
         }*/
+        /*
         System.out.println(Animal.getAnimalList().size());
 
         for (Animal a:Animal.getAnimalList()){
@@ -77,5 +80,11 @@ public class Main {
         catContainer.addCat("Mruczek",2,2);
         System.out.println(CatContainer.getCatList().size());
 
-    }
+    }*/
+        JFrame mainFrame = new JFrame("Schronisko");
+        MainForm mainForm = new MainForm();
+        mainFrame.setContentPane(mainForm.getMainPanel());
+        mainFrame.pack();
+        mainFrame.setVisible(true);
+
 }

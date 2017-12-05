@@ -1,10 +1,11 @@
 package hw4;
 
-import java.util.*;
-
-public abstract   class Signer {
-    public static List<Student> studentsList = new ArrayList<>();
-    public static List<Supervisor> supervisorsList = new ArrayList<>();
-
+public class Signer {
+    Supervisor supervisor;
+    Student student;
+    public void addStudentToSupervisor(Student student){
+        supervisor.addStudent(student);
+        System.out.println();
+    }
 
 }
