@@ -2,18 +2,18 @@ package Case;
 
 public class Human {
     private String firstName;
-    private String secondName;
+    private String lastName;
 
-    public Human(String firstName, String secondName) {
+    public Human(String firstName, String lastName) {
         this.firstName = firstName;
-        this.secondName = secondName;
+        this.lastName = lastName;
     }
 
     public String getFirstName() {
         return firstName;
     }
 
-    public String getSecondName() {
-        return secondName;
+    public String getLastName() {
+        return lastName;
     }
 }
