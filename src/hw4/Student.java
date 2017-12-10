@@ -5,19 +5,27 @@ import java.util.List;
 
 public class Student extends Human {
     private String faculty;
-    public Supervisor supervisor;
+    private static List<Student> studentsCollection = new ArrayList<>();
+    private static int studentsCounter = 0;
 
     public Student(String firstName, String secondName, String pesel, String faculty) {
         super(firstName, secondName, pesel);
+        studentsCounter++;
+        studentsCollection.add(this);
         this.faculty = faculty;
-        this.supervisor = getSupervisor();
     }
-    public Supervisor getSupervisor(){
-        return supervisor;
-    }
+
 
     public String getFaculty() {
         return faculty;
+    }
+
+    public static List<Student> getStudentsCollection() {
+        return studentsCollection;
+    }
+
+    public static int getStudentsCounter() {
+        return studentsCounter;
     }
 
     @Override
@@ -32,7 +40,6 @@ public class Student extends Human {
 
     @Override
     public String toString() {
-        return getFirstName() + " " + getSecondName() + " o numerze PESEL: " + getPesel()+ " studiujący na kierunku " + getFaculty()+
-        " jest u promotora " + getSupervisor();
+        return getFirstName() + " " + getSecondName() + " o numerze PESEL: " + getPesel()+ " studiujący na kierunku " + getFaculty();
     }
 }

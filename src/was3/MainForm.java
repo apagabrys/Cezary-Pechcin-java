@@ -11,24 +11,72 @@ public class MainForm {
     private JTextField nameTF;
     private JTextField ageTF;
     private JButton addButton;
+    private JComboBox showNameCB;
+    private JTextField showAgeTF;
+    private JTextField showWeightTF;
+    private JTextField showTypeOfAnimalTF;
+    private JRadioButton catRB;
+    private JRadioButton dogRB;
+    private CatContainer catContainer = new CatContainer();
 
     public void init(){
+        addButton.addActionListener(new addButtonActionListener());
+        showNameCB.addActionListener(new showNameCBActionListener());
+
+        ButtonGroup buttonGroup = new ButtonGroup();
+        buttonGroup.add(catRB);
+        buttonGroup.add(dogRB);
 
     }
     private class addButtonActionListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
             try {
-                String name = nameTF.getText();
-                int age = Integer.parseInt(ageTF.getText());
-                double weight = Double.parseDouble(weightTF.getText());
-            } catch (NumberFormatException ne){
+                if (dogRB.isSelected()) {
+                    String name = nameTF.getText();
+                    int age = Integer.parseInt(ageTF.getText());
+                    double weight = Double.parseDouble(weightTF.getText());
+                    Dog dog = new Dog(name, age, weight, Breed.PUG);
+                    showNameCB.addItem(name);
+                } else if (catRB.isSelected()) {
+                    String name = nameTF.getText();
+                    int age = Integer.parseInt(ageTF.getText());
+                    double weight = Double.parseDouble(weightTF.getText());
+                    catContainer.addCat(name, age, weight);
+                    showNameCB.addItem(name);
+                } else {
+                    JOptionPane.showMessageDialog(mainPanel, "Select type of animal");
+                }
+
+            }catch (NumberFormatException ne){
+                JOptionPane.showMessageDialog(mainPanel, "Incorrect Input");
 
             }
 
         }
     }
-
+    private class showNameCBActionListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            String name = (String) showNameCB.getSelectedItem();
+            for(int i = 0; i<Dog.getDogCollection().size(); i++) {
+                if(name.equals(Dog.getDogCollection().get(i).getName())){
+                    showAgeTF.setText(String.valueOf(Dog.getDogCollection().get(i).getAge()));
+                    showWeightTF.setText(String.valueOf(Dog.getDogCollection().get(i).getWeight()));
+                    showTypeOfAnimalTF.setText("Dog");
+                }
+            }
+            for (int i=0; i<catContainer.getCatList().size(); i++){
+                if(name.equals(catContainer.getCatList().get(i))){
+                    showAgeTF.setText(String.valueOf
+                            (catContainer.getAge(i)));
+                    showWeightTF.setText(String.valueOf
+                            (catContainer.getWeight(i)));
+                    showTypeOfAnimalTF.setText("Cat");
+                }
+            }
+        }
+    }
     public JPanel getMainPanel(){
         return mainPanel;
     }

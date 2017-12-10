@@ -14,6 +14,16 @@ public class CatContainer {
         }
     }
 
+    public String getName(int index){
+        return catList.get(index).getName();
+    }
+    public int getAge(int index){
+        return catList.get(index).getAge();
+    }
+    public double getWeight(int index){
+        return catList.get(index).getWeight();
+    }
+
     public static List<Cat> getCatList() {
         return catList;
     }

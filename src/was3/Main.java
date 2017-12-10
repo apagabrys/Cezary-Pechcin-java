@@ -41,8 +41,8 @@ public class Main {
                 System.out.println("Znaleziono Mopsa: "+d.getName());
             }
         }*/
-      //  Animal a = new Animal();
-      //  System.out.println(a);
+        //  Animal a = new Animal();
+        //  System.out.println(a);
     /*
         Dog d = new Dog("Max", 5, 5, Breed.PUG);
         System.out.println(d);
@@ -85,6 +85,8 @@ public class Main {
         MainForm mainForm = new MainForm();
         mainFrame.setContentPane(mainForm.getMainPanel());
         mainFrame.pack();
+        mainForm.init();
         mainFrame.setVisible(true);
-
+        mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
 }
