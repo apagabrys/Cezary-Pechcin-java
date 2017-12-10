@@ -7,11 +7,14 @@ import java.awt.event.ActionListener;
 public class MainForm {
     private JPanel mainPanel;
     private JTabbedPane addTabPane;
-    private JTextField weightTF;
-    private JTextField nameTF;
-    private JTextField ageTF;
+    private JTextField teacherTF;
+    private JTextField firstNameTF;
+    private JTextField lastNameTF;
     private JButton addButton;
     private JComboBox showNameCB;
+    private JComboBox subjectCB;
+    private JTextField gradeTF;
+    private JComboBox teacherCB;
     private JTextField showAgeTF;
     private JTextField showWeightTF;
     private JTextField showTypeOfAnimalTF;
@@ -33,15 +36,15 @@ public class MainForm {
         public void actionPerformed(ActionEvent e) {
             try {
                 if (dogRB.isSelected()) {
-                    String name = nameTF.getText();
-                    int age = Integer.parseInt(ageTF.getText());
-                    double weight = Double.parseDouble(weightTF.getText());
+                    String name = firstNameTF.getText();
+                    int age = Integer.parseInt(lastNameTF.getText());
+                    double weight = Double.parseDouble(teacherTF.getText());
                     Dog dog = new Dog(name, age, weight, Breed.PUG);
                     showNameCB.addItem(name);
                 } else if (catRB.isSelected()) {
-                    String name = nameTF.getText();
-                    int age = Integer.parseInt(ageTF.getText());
-                    double weight = Double.parseDouble(weightTF.getText());
+                    String name = firstNameTF.getText();
+                    int age = Integer.parseInt(lastNameTF.getText());
+                    double weight = Double.parseDouble(teacherTF.getText());
                     catContainer.addCat(name, age, weight);
                     showNameCB.addItem(name);
                 } else {
